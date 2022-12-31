@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>Animated Login and Sign up</title>
+<link rel="stylesheet" href="reset.min.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<section class="user">
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">没有账号？</h2>
+        <p class="user_unregistered-text">点击按钮注册成为会员.</p>
+        <button class="user_unregistered-signup" id="signup-button">注册</button>
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">已有账号?</h2>
+        <p class="user_registered-text">点击按钮会员登录.</p>
+        <button class="user_registered-login" id="login-button">登录</button>
+      </div>
+    </div>
+    
+    <div class="user_options-forms" id="user_options-forms">
+      <div class="user_forms-login">
+        <h2 class="forms_title">登录</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="邮箱" class="forms_field-input" required autofocus />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="密码" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <button type="button" class="forms_buttons-forgot">忘记密码?</button>
+            <input type="submit" value="登录" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+      
+      <div class="user_forms-signup">
+        <h2 class="forms_title">注册</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="text" placeholder="名称" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="email" placeholder="邮箱" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="密码" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="submit" value="注册" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    const signupButton = document.getElementById('signup-button'),
+    loginButton = document.getElementById('login-button'),
+    userForms = document.getElementById('user_options-forms')
+
+    signupButton.addEventListener('click', () => {
+      userForms.classList.remove('bounceRight')
+      userForms.classList.add('bounceLeft')
+    }, false)
+
+    loginButton.addEventListener('click', () => {
+      userForms.classList.remove('bounceLeft')
+      userForms.classList.add('bounceRight')
+    }, false)
+</script>
+
+</body>
+</html>
